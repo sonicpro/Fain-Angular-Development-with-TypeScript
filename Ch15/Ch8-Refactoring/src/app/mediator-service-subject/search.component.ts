@@ -20,6 +20,6 @@ export class SearchComponent {
     // Bind valueChanges observable of the FormInput to the injected StateService property.
     this.searchInput.valueChanges
       .pipe(debounceTime(300))
-      .subscribe(searchValue => this.state.searchCriteria = searchValue);
+      .subscribe(searchValue => this.state.searchCriteria = searchValue); // Pass FormControl Observable value to the mediator class setter that causes emitting for its subscribers.
   }
 }
