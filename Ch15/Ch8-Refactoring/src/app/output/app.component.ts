@@ -3,7 +3,7 @@ import {PriceQuote} from './iprice.quote';
 
 @Component({
   selector: 'app-root',
-  // Notice round brackers around "lastPrice" custom event defined in the child component.
+  // Output events like "lastPrice" are bound in the parent component using event binding syntax (parentheses).
   // Also notice that it is the child component that listens to the event produced by itself; no event bubbling used in EventEmitter-generated events.
   template: `
     AppComponent received: {{priceQuote?.stockSymbol}}

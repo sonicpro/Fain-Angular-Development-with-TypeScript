@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <input type="text" placeholder="Enter stock (e.g. AAPL)"  (change)="onChangeEvent($event)">
-
+    <!-- "stockSymbol" is a child component input property. -->
     <order-processor [stockSymbol]="stock" [quantity]="numberOfShares"></order-processor>
   `
 })
