@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -21,7 +22,8 @@ import { SearchEffects } from './search.effects';
       {path: '',        component: EbayComponent},
       {path: 'amazon', component: AmazonComponent}]),
     StoreModule.forRoot({myReducer: reducer}),
-    EffectsModule.forRoot([SearchEffects])
+    EffectsModule.forRoot([SearchEffects]),
+    StoreDevtoolsModule.instrument()
   ],
   declarations: [ AppComponent, EbayComponent, AmazonComponent, SearchComponent],
   providers:[ProductService,
