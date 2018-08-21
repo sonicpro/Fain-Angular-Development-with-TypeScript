@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: ` <div class="main">
               <h2>App component</h2>
     
-              <search></search>  <b><-- Search component</b>
+              <app-search></app-search>  <b><-- Search component</b>
               <p></p>
               
               <a [routerLink]="['/']">eBay</a>
