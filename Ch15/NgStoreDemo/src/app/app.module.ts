@@ -5,10 +5,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { counterReducer } from "./reducer";
 import { StoreModule } from "@ngrx/store";
+import { ChildComponent } from './ChildComponent/child.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

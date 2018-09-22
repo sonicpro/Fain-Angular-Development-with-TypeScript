@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Observable } from "rxjs";
-import { select, Store } from "@ngrx/store";
+import { Store } from "@ngrx/store";
 import { INCREMENT, DECREMENT } from "./reducer";
 
 @Component({
   selector: 'app-root',
   template: `<button (click)="increment()">Increment</button>
   <button (click)="decrement()">Decrement</button>
-  <p>The counter: {{counter$ | async}}</p>`
+  <p>The counter: {{counter$ | async}}</p>
+  <app-child></app-child>
+  `
 })
 
 export class AppComponent {
