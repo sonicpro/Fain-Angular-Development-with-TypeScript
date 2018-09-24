@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { ssnValidator } from './ssn-validator';
+import { equalValidator } from './equal-validator';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,8 @@ export class AppComponent {
       passwordsGroup: this.fb.group({
         password: [""],
         pconfirm: [""]
+      }, {
+        validator: equalValidator
       })
     });
   }

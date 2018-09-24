@@ -1,13 +1,17 @@
 <form [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
   <div>Username:          <input type="text" formControlName="username" /></div>
-  <div>SSN:               <input type="text" formControlName="socialSecurity" /></div>
-  <span [hidden]="!myFormModel.get('socialSecurity').dirty || !myFormModel.hasError('ssn', 'socialSecurity')">
-    {{myFormModel.getError("ssn", "socialSecurity")?.description}}
-  </span>
+  <div>
+    SSN:
+    <input type="text" formControlName="socialSecurity" class="social" />
+    <span [hidden]="!myFormModel.get('socialSecurity').dirty || !myFormModel.hasError('ssn', 'socialSecurity')">
+      {{myFormModel.getError("ssn", "socialSecurity")?.description}}
+    </span>
+  </div>
   <div formGroupName="passwordsGroup">
     <div>Password:        <input type="password" formControlName="password" /></div>
     <div>Confirm password:<input type="password" formControlName="pconfirm" /></div>
   </div>
+  <span class="error" [hidden]="!myFormModel.hasError('equal', 'passwordsGroup')">Passwords must be the same</span>
   <button type="submit">Submit</button>
 </form>
 

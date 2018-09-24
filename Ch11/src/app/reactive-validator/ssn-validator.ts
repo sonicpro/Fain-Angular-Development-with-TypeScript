@@ -1,6 +1,6 @@
-import { AbstractControl, ValidationErrors } from "@angular/forms";
+import { FormControl } from "@angular/forms";
 
-export function ssnValidator(c: AbstractControl) : ValidationErrors | null {
+export function ssnValidator(c: FormControl) : { [key: string]: any } | null {
     const regEx = /^\d{9}$/;
     const value = c.value || "";
     return value.match(regEx) ? null : {
