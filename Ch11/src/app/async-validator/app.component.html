@@ -1,0 +1,13 @@
+<form [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
+  <h2>Sync and async validation demo</h2>
+  Enter your SSN:
+  <input type="text" formControlName="socialSecurity" class="social" />
+  <span *ngIf="myFormModel.hasError('ssn', 'socialSecurity'); else validSsnTemplate">
+    {{myFormModel.getError("ssn", "socialSecurity")?.description}} <!-- error is an object-->
+  </span>
+  <ng-template #validSsnTemplate>SSN is valid</ng-template>
+  <span *ngIf="myFormModel.hasError('work', 'socialSecurity')">
+    {{myFormModel.get("socialSecurity").errors.work}} <!-- error is a plain string-->
+  </span>
+  <button type="submit">Submit</button>
+</form>
