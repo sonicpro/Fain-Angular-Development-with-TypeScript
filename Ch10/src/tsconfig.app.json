@@ -6,9 +6,14 @@
   },
   "files": [
     "main-template.ts",
+    "main-populate.ts",
+    "main-reactive.ts",
     "polyfills.ts"
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  }
 }
